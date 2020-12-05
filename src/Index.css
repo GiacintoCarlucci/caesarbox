@@ -1,8 +1,24 @@
-body{
-  background-color: #102039!important;
-  color: #52aeb6!important;
+:root{
+  --background-color: #102039;
+  --primary-color: #61dbfb;
+  --accent-color: #f1d302;
+  --error-color: #c1292e;
+  --neutral-color: #fffbfc;
 }
-
+body{
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+button{
+  font-weight:900!important;
+  color: var(--accent-color)!important;
+  border-color: var(--accent-color)!important;
+}
+button:hover{
+  color:var(--accent-color)!important;
+  border-color:var(--accent-color)!important;
+  background-color:transparent!important;
+}
 .caesarbox-title{
   margin:0;
   padding:0;

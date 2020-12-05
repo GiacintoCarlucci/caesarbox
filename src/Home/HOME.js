@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function Home(){
   return(
@@ -18,12 +18,15 @@ function Home(){
         </Row>
       </Col>
       <Col md={12} lg={8}>
-        <Row>
-          <Col sm={6} className="p-4 resume">
+        <Row className="p-4">
+          <Col md={12} lg={6} className="resume">
             <p>
               CAESARBOX is a collection of classic ciphers algorithms
               written in <b>Javascript.</b>
             </p>
+          </Col>
+          <Col>
+            <Button variant="outline-primary">CAESAR</Button>
           </Col>
         </Row>
       </Col>
