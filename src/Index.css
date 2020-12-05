@@ -1,0 +1,25 @@
+body{
+  background-color: #102039!important;
+  color: #52aeb6!important;
+}
+
+.caesarbox-title{
+  margin:0;
+  padding:0;
+  font-size:200px;
+  text-align:center;
+  font-family:'Roboto Mono',sans-serif;
+}
+.caesarbox-title div{
+  margin:0;
+  padding:0;
+  line-height:190px;
+}
+.caesarbox-subtitle{
+  font-size:24px;
+  text-align:center;
+  font-family:'Montserrat',sans-serif;
+}
+.resume{
+  font-family:'Montserrat',sans-serif;
+}

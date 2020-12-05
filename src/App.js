@@ -6,7 +6,6 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/' component={Home}></Route>
-        <Route exact path='/ciphers' component={() => "cipher's list"}/>
         <Route path="*" component={() => "404 NOT FOUND"} />
       </Switch>
     </Router>
