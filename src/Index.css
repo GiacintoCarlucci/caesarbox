@@ -19,6 +19,28 @@ button:hover{
   border-color:var(--accent-color)!important;
   background-color:transparent!important;
 }
+textarea{
+  border: 1px solid var(--accent-color);  
+  border-radius: .25rem;
+  background-color: transparent;
+  width:100%;
+  color: var(--neutral-color);
+  padding:10px;
+}
+textarea:focus{
+  outline:none;
+}
+.form-control{
+  background-color:transparent !important;
+  border-color: var(--accent-color);
+  color:var(--neutral-color);
+}
+.input-group-prepend span{
+  background-color:transparent;
+  color: var(--accent-color);
+  font-weight:900;
+  border-color: var(--accent-color);
+}
 .caesarbox-title{
   margin:0;
   padding:0;
@@ -41,3 +63,12 @@ button:hover{
 .resume{
   font-family:'Montserrat',sans-serif;
 }
+.cipher-title{
+  color:var(--accent-color);
+  font-size:42px;
+  font-family:'Roboto Mono',sans-serif;
+}
+.cipher-description{
+  font-family:'Montserrat',sans-serif;
+}
+
