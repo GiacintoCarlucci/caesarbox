@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Row, Col, Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function Home(){
   return(
@@ -26,7 +27,7 @@ function Home(){
             </p>
           </Col>
           <Col>
-            <Button variant="outline-primary">CAESAR</Button>
+            <Link to='/caesar'><Button variant="outline-primary">CAESAR</Button></Link>
           </Col>
         </Row>
       </Col>

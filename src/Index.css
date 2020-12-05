@@ -25,6 +25,7 @@ button:hover{
   font-size:200px;
   text-align:center;
   font-family:'Roboto Mono',sans-serif;
+  color:var(--accent-color);
 }
 .caesarbox-title div{
   margin:0;
@@ -35,6 +36,7 @@ button:hover{
   font-size:24px;
   text-align:center;
   font-family:'Montserrat',sans-serif;
+  color:var(--accent-color);
 }
 .resume{
   font-family:'Montserrat',sans-serif;
