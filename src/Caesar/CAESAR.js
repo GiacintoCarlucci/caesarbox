@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function shift(letter, offset){
   let ascii = letter.charCodeAt(0);
+  offset = offset % 26;
   if(offset < 0){ offset += 26;}
   if(ascii >= 65 && ascii <= 90){
     ascii = ((ascii - 65 + offset)%26)+65;
