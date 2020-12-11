@@ -3,10 +3,38 @@ import {Container, Row, Col, Button, InputGroup, FormControl} from 'react-bootst
 import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+function shift(letter, offset){
+  let ascii = letter.charCodeAt(0);
+  if(offset < 0){ offset += 26;}
+  if(ascii >= 65 && ascii <= 90){
+    ascii = ((ascii - 65 + offset)%26)+65;
+  }
+  if(ascii >= 97 && ascii <= 122){
+    ascii = ((ascii - 97 + offset)%26)+97;
+  }
+  console.log(letter,offset)
+  return String.fromCharCode(ascii);
+}
+
 function Caesar(){
   const [rawText,setRawText]=useState('')
-  const [encodedText,seEencodedText]=useState('')
+  const [encodedText,setEncodedText]=useState('')
+  const [key,setKey]=useState(3)
 
+  function encode(){
+    let text = ''
+    for(let i = 0; i < rawText.length; i++){
+      text += shift(rawText[i],key);
+    }
+    setEncodedText(text)
+  }
+  function decode(){
+    let text = ''
+    for(let i = 0; i < rawText.length; i++){
+      text += shift(rawText[i],-key);
+    }
+    setEncodedText(text)
+  }
 
   return(
     <Container className="mt-5">
@@ -23,20 +51,23 @@ function Caesar(){
         <Col sm={12} className="my-3">
           <textarea placeholder="Insert here your text." rows="5" name="rawText" value={rawText} onChange={e => setRawText(e.target.value)}></textarea>
           <Row>
-            <Col sm={3}>
+            <Col xs={5} md={3} lg={2}>
               <InputGroup>
                 <InputGroup.Prepend>
                   <InputGroup.Text>key</InputGroup.Text>
                 </InputGroup.Prepend>
-                <FormControl type="number"/>
+                <FormControl min="1" max="100" type="number" value={key} onChange={(e) => setKey(Number(e.target.value))}/>
               </InputGroup>
             </Col>
             <Col>
-              <Button variant="outline-primary">Encode</Button>
+              <Button variant="outline-primary" onClick={() => encode()}>Encode</Button>
+            </Col>
+            <Col>
+              <Button variant="outline-primary" onClick={() => decode()}>Decode</Button>
             </Col>
           </Row>
         </Col>
-        <Col sm={12} className="my-3">
+        <Col sm={12} className="my-5">
           <textarea placeholder="Result..." rows="5" name="encodedText" value={encodedText}></textarea>
         </Col>
       </Row>
