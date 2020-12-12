@@ -70,6 +70,11 @@ function Caesar(){
         </Col>
         <Col sm={12} className="my-5">
           <textarea placeholder="Result..." rows="5" name="encodedText" value={encodedText}></textarea>
+          <Row>
+            <Col>
+              <Button variant='outline-primary' onClick={() => navigator.clipboard.writeText(encodedText)}>Copy</Button>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </Container>
