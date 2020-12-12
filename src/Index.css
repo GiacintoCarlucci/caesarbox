@@ -14,7 +14,7 @@ button{
   color: var(--accent-color)!important;
   border-color: var(--accent-color)!important;
 }
-button:hover{
+button:hover,:focus{
   color:var(--accent-color)!important;
   border-color:var(--accent-color)!important;
   background-color:transparent!important;
@@ -29,6 +29,10 @@ textarea{
 }
 textarea:focus{
   outline:none;
+  color:var(--neutral-color)!important;
+}
+input:focus{
+  color:var(--neutral-color)!important;
 }
 .form-control{
   background-color:transparent !important;
