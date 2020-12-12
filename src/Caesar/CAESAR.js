@@ -57,7 +57,7 @@ function Caesar(){
                 <InputGroup.Prepend>
                   <InputGroup.Text>key</InputGroup.Text>
                 </InputGroup.Prepend>
-                <FormControl min="1" max="100" type="number" value={key} onChange={(e) => setKey(Number(e.target.value))}/>
+                <FormControl min="1" max="100" type="number" value={key} onClick={(e) => e.target.select()} onChange={(e) => setKey(Number(e.target.value))}/>
               </InputGroup>
             </Col>
             <Col className="text-right">
