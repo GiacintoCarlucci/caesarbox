@@ -12,7 +12,6 @@ function shift(letter, offset){
   if(ascii >= 97 && ascii <= 122){
     ascii = ((ascii - 97 + offset)%26)+97;
   }
-  console.log(letter,offset)
   return String.fromCharCode(ascii);
 }
 
