@@ -60,16 +60,16 @@ function Caesar(){
                 <FormControl min="1" max="100" type="number" value={key} onChange={(e) => setKey(Number(e.target.value))}/>
               </InputGroup>
             </Col>
-            <Col>
+            <Col className="text-right">
               <Button variant="outline-primary mx-1" onClick={() => encode()}>Encode</Button>
-              <Button variant="outline-primary mx-1" onClick={() => decode()}>Decode</Button>
+              <Button variant="outline-primary ml-1" onClick={() => decode()}>Decode</Button>
             </Col>
           </Row>
         </Col>
         <Col sm={12} className="my-5">
           <textarea placeholder="Result..." rows="5" name="encodedText" value={encodedText}></textarea>
           <Row>
-            <Col>
+            <Col className="text-right">
               <Button variant='outline-primary'
                 onClick={() => {
                     navigator.clipboard.writeText(encodedText)
@@ -78,9 +78,8 @@ function Caesar(){
                   }
                 }
               >
-                Copy
+                {copied ? <span aria-label="done" role="img">&#x2714;</span> : <span>Copy</span>}
               </Button>
-              {copied && <span className="mx-2">Copied!</span>}
             </Col>
           </Row>
         </Col>
