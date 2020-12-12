@@ -21,6 +21,7 @@ function Caesar(){
   const [rawText,setRawText]=useState('')
   const [encodedText,setEncodedText]=useState('')
   const [key,setKey]=useState(3)
+  const [copied,setCopied]=useState(false)
 
   function encode(){
     let text = ''
@@ -72,7 +73,17 @@ function Caesar(){
           <textarea placeholder="Result..." rows="5" name="encodedText" value={encodedText}></textarea>
           <Row>
             <Col>
-              <Button variant='outline-primary' onClick={() => navigator.clipboard.writeText(encodedText)}>Copy</Button>
+              <Button variant='outline-primary'
+                onClick={() => {
+                    navigator.clipboard.writeText(encodedText)
+                    .then(setCopied(true))
+                    .then(setTimeout(()=>setCopied(false),2000))
+                  }
+                }
+              >
+                Copy
+              </Button>
+              {copied && <span className="mx-2">Copied!</span>}
             </Col>
           </Row>
         </Col>
