@@ -60,11 +60,9 @@ function Caesar(){
                 <FormControl min="1" max="100" type="number" value={key} onChange={(e) => setKey(Number(e.target.value))}/>
               </InputGroup>
             </Col>
-            <Col sm={1}>
-              <Button variant="outline-primary" onClick={() => encode()}>Encode</Button>
-            </Col>
-            <Col sm={1}>
-              <Button variant="outline-primary" onClick={() => decode()}>Decode</Button>
+            <Col>
+              <Button variant="outline-primary mx-1" onClick={() => encode()}>Encode</Button>
+              <Button variant="outline-primary mx-1" onClick={() => decode()}>Decode</Button>
             </Col>
           </Row>
         </Col>
